@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  server:
+    # implement image if I decide to use docker-compose in prod 
+    build: .
+    ports:
+    - "3000:3000"
+    env_file: .env
