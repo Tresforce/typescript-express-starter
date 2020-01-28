@@ -7,8 +7,8 @@ import config from './config';
 import { Logger } from './utils';
 
 const logger = Logger(module);
-
 const { APP_PORT } = config.application;
+
 async function startServer(): Promise<void> {
   const app = express();
   logger.info(`Node env is ${process.env.NODE_ENV}`);

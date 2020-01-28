@@ -49,7 +49,7 @@ export default (callingModule: NodeModule): winston.Logger => {
           winston.format.splat(),
           winston.format.printf(
             info =>
-              `[${info.timestamp}] [${info.label}][${info.level}]: ${
+              `[${info.timestamp}] [${info.label}] [${info.level}]: ${
                 info.message
               } ${typeof info.stack !== 'undefined' ? info.stack : ''}`
           )

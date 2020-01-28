@@ -8,8 +8,9 @@
     "showDocs": "live-server --quiet --port=5000 --open=./docs",
     "build": "NODE_ENV=production webpack",
     "buildDockerImage": "docker image build -t mvp .",
-    "runLocalDocker": "docker-compose up",
+    "runLocalDocker": "docker-compose up --build",
     "stopLocalDocker": "docker-compose down",
+    "startLocalDb": "docker run --rm -h localhost --name pg-docker -v $(pwd)/bin/:/docker-entrypoint-initdb.d  -e POSTGRES_PASSWORD=cltest -e POSTGRES_USER=cluser -e POSTGRES_MULTIPLE_DATABASES=localdb,testdb -d -p 5432:5432 postgres:11.5",
     "prebuild": "rm -rf ./build",
     "dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --fix",
@@ -37,6 +38,7 @@
     "install": "^0.13.0",
     "logdna-winston": "^2.2.5",
     "pg": "^7.12.1",
+    "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.20",
     "validate.js": "^0.13.1",
     "winston": "^3.2.1"
