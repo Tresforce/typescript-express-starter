@@ -2,10 +2,10 @@ version: '3.7'
 services:
   db:
     image: 'postgres:11.5'
-    volumes:
-      - ./scripts:/docker-entrypoint-initdb.d/
+    # volumes:
+    #   - ./scripts:/docker-entrypoint-initdb.d/
     environment:
-      - POSTGRES_MULTIPLE_DATABASES=devdb,db2
+      - POSTGRES_DATABASE=devdb
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=psw
   server:
@@ -18,7 +18,8 @@ services:
     # local development
     depends_on:
       - 'db'
-    command: ['./bin/wait-for-it.sh', 'db', 'npm', 'run', 'dev']
+    # command: ['./bin/wait-for-it.sh', 'db', 'npm', 'run', 'dev']
+    command: npm run dev
     working_dir: /usr/bin/app
     volumes:
       - ./:/usr/bin/app:cached

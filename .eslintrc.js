@@ -39,6 +39,7 @@ const typescriptRules = {
       checksVoidReturn: false
     }
   ],
+  '@typescript-eslint/no-non-null-assertion': 'off',
   '@typescript-eslint/no-this-alias': ['error'],
   '@typescript-eslint/strict-boolean-expressions': [
     'error',
@@ -102,6 +103,7 @@ const baseRules = {
   'no-extra-parens': 'off',
   'no-useless-constructor': 'off',
   'require-await': 'off',
+  'consistent-return': 'off',
   'object-curly-spacing': ['error', 'always'],
   'array-bracket-spacing': ['error', 'never']
 };

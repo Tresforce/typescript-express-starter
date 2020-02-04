@@ -1,10 +1,10 @@
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { Application } from 'express';
-import routes from '../api';
-import { notFoundError, sendError } from '../api/middleware/errorHandling';
-import logRequest from '../api/middleware/logRequest';
-import config from '../config';
+import routes from '../../api';
+import { notFoundError, sendError } from '../../api/middleware/errorHandling';
+import logRequest from '../../api/middleware/logRequest';
+import config from '../../config';
 
 const { API_VERSION } = config.application;
 const apiPrefix = `dev/${API_VERSION}`;

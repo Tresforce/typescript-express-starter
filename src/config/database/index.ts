@@ -6,7 +6,7 @@ const {
 } = process.env;
 
 const database = {
-  typeormHost: TYPEORM_HOST,
+  host: TYPEORM_HOST,
   port: 5432,
   username: TYPEORM_USERNAME,
   password: TYPEORM_PASSWORD,
